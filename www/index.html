@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+-->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script data-main="js/main.js" src="js/require.js"> </script>
-    <!--<script type="text/javascript" data-main="js/main.js" src="http://apps.bdimg.com/libs/require.js/2.1.11/require.min.js"></script>-->
+<!-- ionic/angularjs js -->
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+<script data-main="js/main.js" src="js/require.js"> </script>
+<!--<script type="text/javascript" data-main="js/main.js" src="http://apps.bdimg.com/libs/require.js/2.1.11/require.min.js"></script>-->
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <!--<script src="cordova.js"></script>-->
+<!-- cordova script (this will be a 404 during development) -->
+<!--<script src="cordova.js"></script>-->
 
-    <!-- your app's js -->
-    <!--<script src="js/app.js"></script>-->
-    <!--<script src="js/controllers/controllers.js"></script>-->
-    <!--<script src="js/services.js"></script>-->
-  </head>
-  <body ng-app="starter">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <!--
+<!-- your app's js -->
+<!--<script src="js/app.js"></script>-->
+<!--<script src="js/controllers/controllers.js"></script>-->
+<!--<script src="js/services.js"></script>-->
+</head>
+<body ng-app="starter" animation="slide-left-right-ios7">
+  <!--
+  The nav bar that will be updated as we navigate between views.
+-->
+<div>
+  <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
+    <ion-side-menu-content>
+      <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+      </ion-nav-bar>
+      <!--
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
     <ion-nav-view></ion-nav-view>
-  </body>
-</html>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21" style="background-color:#FFFFFF;">
+    <ion-header-bar class="bar-stable">
+      <div class="title">刘小文</div>
+    </ion-header-bar>
+    <ion-content padding="false" class="side-menu-left has-header">
+      <ion-list id="side-menu21-list9" class=" " data-componentid="list9">
+        <ion-item class="item-icon-left  " id="side-menu21-list-item34" data-componentid="list-item34">
+          <i class="icon ion-ionic"></i>我的活动</ion-item>
+          <ion-item class="item-icon-left  " id="side-menu21-list-item35" data-componentid="list-item35">
+            <i class="icon ion-ionic"></i>我的钱包</ion-item>
+            <ion-item class="item-icon-left  " id="side-menu21-list-item36" data-componentid="list-item36">
+              <i class="icon ion-ionic"></i>推荐有奖</ion-item>
+              <ion-item class="item-icon-left  " id="side-menu21-list-item37" data-componentid="list-item37">
+                <i class="icon ion-ionic"></i>设置</ion-item>
+              </ion-list>
+            </ion-content>
+          </ion-side-menu>
+        </ion-side-menus>
+      </div>
+    </body>
+    </html>
