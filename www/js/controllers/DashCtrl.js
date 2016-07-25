@@ -31,7 +31,7 @@
 //  });
 //})
 //修改后的文件如下
-define([], function () {
+define(['app'], function (app) {
   'use strict';
   function ctrl($scope,$ionicPopover,$timeout) {
     $scope.popover = $ionicPopover.fromTemplateUrl('my-popover.html', {
@@ -66,5 +66,6 @@ define([], function () {
     });
   }
   ctrl.$inject = ['$scope','$ionicPopover','$timeout'];
-  return ctrl;
+  app.registerController('DashCtrl',ctrl);
+  // return ctrl;
 });

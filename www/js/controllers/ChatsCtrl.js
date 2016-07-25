@@ -13,7 +13,7 @@
   //  };
   //})
   //修改后的文件如下
-  define([], function () {
+  define(['app'], function (app) {
     'use strict';
     function ctrl($scope, Chats) {
       //With the new view caching in Ionic, Controllers are only called
@@ -30,5 +30,6 @@
         };
     }
     ctrl.$inject = ['$scope', 'Chats'];
-    return ctrl;
+    app.registerController('ChatsCtrl',ctrl);
+    // return ctrl;
   });

@@ -4,7 +4,7 @@
 //  };
 //});
 //修改后的文件如下
-define([], function () {
+define(['app'], function (app) {
   'use strict';
   function ctrl($scope) {
     $scope.settings = {
@@ -13,6 +13,6 @@ define([], function () {
   }
 
   ctrl.$inject = ['$scope'];
-  return ctrl;
+  app.registerController('AccountCtrl',ctrl);
+  // return ctrl;
 });
-
