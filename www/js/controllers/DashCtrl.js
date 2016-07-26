@@ -66,6 +66,6 @@ define(['app'], function (app) {
     });
   }
   ctrl.$inject = ['$scope','$ionicPopover','$timeout'];
+  //return ctrl;
   app.registerController('DashCtrl',ctrl);
-  // return ctrl;
 });

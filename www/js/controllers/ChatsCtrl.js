@@ -25,17 +25,23 @@ define(['app'], function (app) {
     //});
     $scope.title = "聊天";
     // $scope.chats = Chats.all();
-    Chats.all().then(function (data) {
-      $scope.chats=data
-    }).finally(function () {
-
-    });
+    function successCallback(data){
+        $scope.chats = data
+      }
+      function failCallback(error){
+        console.log(error);
+      }
+    Chats.getAllData(successCallback,failCallback);
+    // Chats.all().then(function (data) {
+    //   $scope.chats=data
+    // }).finally(function () {
+    // });
 
     $scope.remove = function(chat) {
       Chats.remove(chat);
     };
   }
   ctrl.$inject = ['$scope', 'Chats'];
-  app.registerController('ChatsCtrl',ctrl);
-  // return ctrl;
+    //return ctrl;
+    app.registerController('ChatsCtrl',ctrl);
 });

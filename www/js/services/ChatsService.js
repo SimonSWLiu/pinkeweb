@@ -1,6 +1,6 @@
 define([],function () {
   "use strict";
-  var factory = function ($q) {
+  var factory = function ($http) {
     var chats = [{
       id: 0,
       name: 'Ben Sparrow',
@@ -29,11 +29,24 @@ define([],function () {
     }];
 
     return {
-      all: function() {
-        var deferred = $q.defer();
-        deferred.resolve(chats);
-        return deferred.promise;
-        // return chats;
+      getAllData: function(successCallback,failCallback) {
+        var url = "http://test.lbwan.com:18080/lbopen/channel/getAllMakeGameListName.json?channelId=37&currentPage=1&pageSize=10"
+        url+="&callback=JSON_CALLBACK";
+        $http.jsonp(url).success(function (data) {
+          //业务处理
+          var data = data.data.rows;
+          for(var key in data){
+            data[key].icon = "http://test.lbwan.com/res/"+data[key].icon;
+          }
+          successCallback(data)
+        }).error(function (error) {
+          //业务处理
+          failCallback(error)
+        })
+        //var deferred = $q.defer();
+        //deferred.resolve(chats);
+        //return deferred.promise;
+        //return chats;
       },
       remove: function(chat) {
         chats.splice(chats.indexOf(chat), 1);
@@ -48,6 +61,6 @@ define([],function () {
       }
     };
   }
-  factory.$inject = ['$q'];
+  factory.$inject = ['$http'];
   return factory;
 })

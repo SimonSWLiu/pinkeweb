@@ -111,7 +111,7 @@ define([
         }
       })
       .state('tab.chat-detail', {
-        url: '/chats/:chatId',
+      url: '/chats/:gameId',
         views: {
           'tab-chats': {
             templateUrl: 'templates/chat-detail.html',

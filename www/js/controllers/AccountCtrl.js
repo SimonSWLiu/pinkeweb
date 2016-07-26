@@ -14,5 +14,6 @@ define(['app'], function (app) {
 
   ctrl.$inject = ['$scope'];
   app.registerController('AccountCtrl',ctrl);
-  // return ctrl;
+  //return ctrl;
 });
+
