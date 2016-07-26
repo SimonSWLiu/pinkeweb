@@ -1,6 +1,6 @@
 define([],function () {
   "use strict";
-  var factory = function () {
+  var factory = function ($q) {
     var chats = [{
       id: 0,
       name: 'Ben Sparrow',
@@ -30,7 +30,10 @@ define([],function () {
 
     return {
       all: function() {
-        return chats;
+        var deferred = $q.defer();
+        deferred.resolve(chats);
+        return deferred.promise;
+        // return chats;
       },
       remove: function(chat) {
         chats.splice(chats.indexOf(chat), 1);
@@ -45,6 +48,6 @@ define([],function () {
       }
     };
   }
-  factory.$inject = [];
+  factory.$inject = ['$q'];
   return factory;
 })

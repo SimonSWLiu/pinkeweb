@@ -23,12 +23,12 @@ define(['app'], function (app) {
     //
     //$scope.$on('$ionicView.enter', function(e) {
     //});
-
+    $scope.title = "聊天";
     // $scope.chats = Chats.all();
     Chats.all().then(function (data) {
       $scope.chats=data
     }).finally(function () {
-      
+
     });
 
     $scope.remove = function(chat) {
