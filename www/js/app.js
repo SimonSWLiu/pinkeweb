@@ -1,4 +1,5 @@
 define([
+  'routes/routes',
   'services/services',
   'controllers/controllers'],
 
@@ -11,7 +12,7 @@ define([
     // the 2nd parameter is an array of 'requires'
     // 'starter.services' is found in services.js
     // 'starter.controllers' is found in controllers.js
-    var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+    var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.controllers', 'starter.services'])
 
     app.run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -29,7 +30,7 @@ define([
       });
     })
     .config(function($stateProvider, $urlRouterProvider, $controllerProvider) {
-
+      app.routes = $stateProvider;
       app.registerController = $controllerProvider.register;
       app.loadControllerJs = function(controllerJs){
         return function($rootScope, $q){
@@ -65,7 +66,10 @@ define([
         views: {
           'tab-activities': {
             templateUrl: 'templates/tab-activities.html',
-            controller: 'tabActivitiesCtrl'
+            controller: 'TabActivitiesCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/TabActivitiesCtrl')
+            }
           }
         }
       })
@@ -75,7 +79,10 @@ define([
         views: {
           'tab-treehole': {
             templateUrl: 'templates/tab-treehole.html',
-            controller: 'tabTreeHoleCtrl'
+            controller: 'TabTreeHoleCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/TabTreeHoleCtrl')
+            }
           }
         }
       })

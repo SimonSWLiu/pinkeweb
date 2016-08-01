@@ -1,12 +1,8 @@
-define([], function(){
+define(['app'], function (app) {
   'use strict';
-  function ctrl($scope){
+  function ctrl($scope) {
 
   }
   ctrl.$inject = ['$scope'];
-  return ctrl;
-})
-
-// .controller('tabActivitiesCtrl', function($scope) {
-//
-// })
+  app.registerController('TabActivitiesCtrl',ctrl);
+});

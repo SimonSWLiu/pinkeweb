@@ -1,12 +1,8 @@
-define([], function(){
+define(['app'], function (app) {
   'use strict';
-  function ctrl($scope){
+  function ctrl($scope) {
 
   }
   ctrl.$inject = ['$scope'];
-  return ctrl;
-})
-
-// .controller('tabTreeHoleCtrl', function($scope) {
-//
-// })
+  app.registerController('TabTreeHoleCtrl',ctrl);
+});
